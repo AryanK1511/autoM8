@@ -1,0 +1,45 @@
+# Ignore macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ignore thumbnails
+._*
+.DS_Store?
+
+# Ignore hidden files
+.Trashes
+*.Spotlight-V100
+.Spotlight-V100
+
+# Ignore temporary files
+*.swp
+*~
+*#
+
+# Ignore logs
+*.log
+
+# Ignore package files
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Ignore compiled files
+*.pyc
+*.class
+
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore npm debug logs
+npm-debug.log*
+
+# Ignore yarn errors
+yarn-error.log
+
+# Ignore Visual Studio Code files
+.vscode/
