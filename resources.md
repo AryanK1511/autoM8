@@ -1,0 +1,1 @@
+- [How to Protect an API in FastAPI with Auth0 by Okta](https://www.youtube.com/watch?v=1aha4yrT2l0)
