@@ -1,11 +1,13 @@
 import React from 'react';
-import { Button, ButtonGroup } from '@nextui-org/button';
+import { HomeBanner } from '@/components';
 
-export default function Home() {
+// ========== HOMEPAGE ==========
+const Home: React.FC = () => {
   return (
     <div>
-      Hello World
-      <Button color="primary">Button</Button>
+      <HomeBanner />
     </div>
   );
-}
+};
+
+export default Home;
