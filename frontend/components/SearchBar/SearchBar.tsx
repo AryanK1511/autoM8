@@ -23,7 +23,7 @@ export const SearchBar: React.FC = () => {
             input: 'py-3 px-4 rounded-l-md rounded-r-none text-md font-semibold',
             label: 'sr-only',
             inputWrapper: [
-              'shadow-lg shadow-indigo-600',
+              'shadow-md shadow-indigo-600',
               'py-6',
               'backdrop-blur-xl',
               'backdrop-saturate-200s',

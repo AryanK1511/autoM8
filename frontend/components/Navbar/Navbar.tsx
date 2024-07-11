@@ -1,12 +1,18 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { Chip } from '@nextui-org/react';
-import { Button } from '@nextui-org/react';
 import { UserIcon, CheckIcon } from '@/components';
 import Image from 'next/image';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import { ProfileDropdown } from '@/components';
 
 // ========== NAVBAR COMPONENT ==========
 export const Navbar: React.FC = () => {
+  // Getting the authenticated user if any
+  const { user, error, isLoading }: any = useUser();
+
   return (
     <nav className="bg-transparent">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -29,10 +35,16 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
           <div className="flex items-center space-x-1">
-            <button className="inline-flex items-center px-4 py-2 shadow-lg shadow-indigo-400 bg-indigo-600 text-white  border border-indigo-600 shadow-sea rounded-md hover:bg-indigo-800">
-              <UserIcon />
-              <span className="text-lg font-semibold">Sign In</span>
-            </button>
+            {user ? (
+              <ProfileDropdown />
+            ) : (
+              <Link href="/api/auth/login">
+                <button className="inline-flex items-center px-4 py-2 shadow-lg shadow-indigo-400 bg-indigo-600 text-white  border border-indigo-600 shadow-sea rounded-md hover:bg-indigo-800">
+                  <UserIcon />
+                  <span className="text-lg font-semibold">Sign In</span>
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

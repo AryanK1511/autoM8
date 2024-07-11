@@ -5,12 +5,14 @@ import { NextUIProvider } from '@nextui-org/react';
 import { Navbar } from '@/components';
 import './globals.css';
 
+// Metadata
 export const metadata: Metadata = {
   title: 'autoM8 | Effortless Automation',
   description: 'Effortless automation',
 };
 
-export default function RootLayout({
+// ========== ROOT LAYOUT ==========
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
