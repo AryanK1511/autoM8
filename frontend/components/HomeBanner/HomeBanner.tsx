@@ -1,10 +1,37 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import { DocsIcon, GitHubIcon, SearchBar } from '@/components';
 import { Button } from '@nextui-org/react';
+import { useUser } from '@auth0/nextjs-auth0/client';
 import Link from 'next/link';
+
+const fetchData = async () => {
+  try {
+    const response = await fetch('/api/test');
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error('Failed to fetch data:', error);
+  }
+};
 
 // ========== HOME BANNER COMPONENT ==========
 export const HomeBanner: React.FC = () => {
+  const { user, error, isLoading } = useUser();
+
+  useEffect(() => {
+    if (user) {
+      fetchData();
+    }
+  }, [user]);
+
   return (
     <div className="grid grid-cols-1 gap-4">
       <div className="flex justify-center text-center mx-auto flex-col w-full">
