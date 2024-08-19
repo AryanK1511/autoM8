@@ -1,0 +1,34 @@
+# Sets up local environment for testing
+version: '3.9'
+
+networks:
+  development-network:
+    driver: bridge
+
+services:
+
+  # PostgreSQL database
+  postgresql-database:
+    container_name: postgresql-database
+    image: postgres:16.4-alpine3.20@sha256:492898505cb45f9835acc327e98711eaa9298ed804e0bb36f29e08394229550d
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: autom8-relational-db
+    ports:
+      - 5433:5432
+    volumes:
+      - ./db-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - development-network
+
+  # Adminer
+  adminer:
+    container_name: adminer
+    image: adminer@sha256:34d37131366c5aa84e1693dbed48593ed6f95fb450b576c1a7a59d3a9c9e8802
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - development-network

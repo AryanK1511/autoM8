@@ -1,0 +1,8 @@
+Table automations {
+  id integer [primary key] 
+  title varchar(255) 
+  description text 
+  created_at timestamp
+  times_used integer [default: 0] 
+  rating integer [default: 0]
+}
