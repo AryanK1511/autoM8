@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker
+
 from application.config import get_settings
 
 # Fetch all the database settings from the config file
@@ -15,6 +15,7 @@ engine = create_engine(settings.get_database_url())
 # Create a session factory
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+
 # Dependency for FastAPI to get the database session
 def get_db():
     db = SessionLocal()
@@ -22,6 +23,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
 
 # Script to create all the tables based on the models defined
 def create_all_tables():
