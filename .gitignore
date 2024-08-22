@@ -41,5 +41,3 @@ npm-debug.log*
 # Ignore yarn errors
 yarn-error.log
 
-# Ignore Visual Studio Code files
-.vscode/
