@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = "==0.100.1"
+fastapi = "*"
 authlib = "*"
 annotated-types = "==0.5.0"
 anyio = "==3.7.1"
@@ -26,6 +26,9 @@ uvicorn = "==0.23.2"
 sqlalchemy = "*"
 psycopg2 = "*"
 colorlog = "*"
+ruff = "*"
+httpx = "*"
+pytest = "*"
 
 [dev-packages]
 

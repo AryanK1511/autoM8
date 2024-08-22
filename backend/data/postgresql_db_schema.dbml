@@ -1,0 +1,22 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table automations {
+  id integer [primary key] 
+  type_id integer [ref: > automation_types.id]
+  title varchar(255) 
+  description text 
+  created_at timestamp
+  times_used integer [default: 0] 
+  rating integer [default: 0]
+}
+
+Table automation_types {
+  id integer [primary key]
+  name varchar
+  description varchar
+  requires_ssh_key boolean [default: false] 
+  package_manager_required boolean [default: true] 
+  created_at timestamp 
+  updated_at timestamp 
+}
