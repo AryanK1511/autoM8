@@ -2,6 +2,12 @@
 __pycache__/
 *.py[cod]
 
+# Ruff formatter
+.ruff_cache/
+
+# Pytest
+.pytest_cache/
+
 # C extensions
 *.so
 
@@ -27,7 +33,6 @@ MANIFEST
 
 # IDEs and editors
 .idea/
-.vscode/
 *.sublime-project
 *.sublime-workspace
 

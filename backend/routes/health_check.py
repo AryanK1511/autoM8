@@ -9,7 +9,7 @@ router = APIRouter()
 auth = VerifyToken()
 
 """
-Health Check Route - Unauthenticated
+    Health Check Route - Unauthenticated
 """
 
 
@@ -29,7 +29,7 @@ def unauthenticated_health_check():
 
 
 """
-Health Check Route - Authenticated
+    Health Check Route - Authenticated
 """
 
 
